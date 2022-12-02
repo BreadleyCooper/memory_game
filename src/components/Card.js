@@ -1,10 +1,14 @@
-// The logic to render each card
-
 import React from "react";
 
-const Card = () => {
+const Card = (props) => {
+    const {image, name} = props
+
     return (
-        <div></div>
+        <div className="card">
+        <img src={require(image)}
+             alt={name}
+             className="cardImg"></img>
+        </div>
     )
 }
 
