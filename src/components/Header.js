@@ -1,0 +1,17 @@
+// Title of app and score counter
+import React, {useState} from "react"
+
+const Header = (props) => {
+    const {score, bestScore} = props
+    return(
+        <div className="headerContainer">
+            <div>Memory Game. Pick a card. Don't pick the same one twice!</div>
+            <div className="scoreContainer">
+                <div className="score">Current Score:{score}</div>
+                <div className="bestScore">Best Score:{bestScore}</div>
+            </div>
+        </div>
+    )
+}
+
+export default Header
