@@ -1,8 +1,9 @@
 import React from "react";
 import cardArray from "../cardArray";
+import selectedCards from "../selectedCards";
 
 const Card = (props) => {
-    const {image, name} = props
+    const {image, name, id, handleClick} = props
 
 
 
@@ -10,7 +11,9 @@ const Card = (props) => {
         <div className="card">
         <img src={image}
              alt={name}
-             className="cardImg"></img>
+             className="cardImg"
+             id={id}
+             onClick={handleClick}></img>
         </div>
     )
 }

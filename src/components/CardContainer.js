@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import cardArray from "../cardArray";
+import selectedCards from "../selectedCards";
 
 const CardContainer = (props) => {
 
@@ -16,6 +17,12 @@ const CardContainer = (props) => {
     // run the shuffle function before render
     shuffleCardArray(cardArray)
 
+    const handleClick = (event) => {
+        console.log(event.target.id)
+        selectedCards.push(event.target.id)
+        console.log(selectedCards)
+      }
+
     return(
         <div className="cardContainer">
             {cardArray.map((card) => {
@@ -23,6 +30,8 @@ const CardContainer = (props) => {
                 <Card   name={card.name} 
                         image={card.image} 
                         key={card.id}
+                        id={card.id}
+                        handleClick={handleClick}
                         />)
             })}
         </div>
