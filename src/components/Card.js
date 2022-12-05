@@ -5,7 +5,7 @@ const Card = (props) => {
 
     return (
         <div className="card">
-        <img src={require(image)}
+        <img src={image}
              alt={name}
              className="cardImg"></img>
         </div>

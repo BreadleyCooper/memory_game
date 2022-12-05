@@ -1,6 +1,8 @@
 import Header from './components/Header';
 import CardContainer from './components/CardContainer';
 import { useState } from 'react';
+import "./styles/card.css"
+import "./styles/cardContainer.css"
 
 
 function App() {
