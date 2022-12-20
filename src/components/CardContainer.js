@@ -5,6 +5,8 @@ import selectedCards from "../selectedCards";
 
 const CardContainer = (props) => {
 
+    const {incrementScore, resetScore} = props
+
     // shuffles the order of cardArray
     const shuffleCardArray = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
@@ -17,10 +19,19 @@ const CardContainer = (props) => {
     // run the shuffle function before render
     shuffleCardArray(cardArray)
 
+    // on clicking the card, push it's id to the check array
     const handleClick = (event) => {
-        console.log(event.target.id)
+        // console.log(event.target.id)
         selectedCards.push(event.target.id)
         console.log(selectedCards)
+        // check if card selected matches the last previous one
+        if (selectedCards.at(-2) === event.target.id) {
+            console.log(event.target.id, selectedCards.at(-2), "Correct")
+            incrementScore()
+        }else {
+            console.log("WRONG")
+            resetScore()
+        }   
       }
 
     return(
