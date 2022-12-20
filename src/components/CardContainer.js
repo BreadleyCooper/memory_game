@@ -22,17 +22,18 @@ const CardContainer = (props) => {
     // on clicking the card, push it's id to the check array
     const handleClick = (event) => {
         // console.log(event.target.id)
-        selectedCards.push(event.target.id)
         console.log(selectedCards)
         // check if card selected matches the last previous one
-        if (selectedCards.at(-2) === event.target.id) {
-            console.log(event.target.id, selectedCards.at(-2), "Correct")
-            incrementScore()
-        }else {
-            console.log("WRONG")
+        if (selectedCards.includes(event.target.id)) {
+            console.log(event.target.id, selectedCards.at(-2), "Wrong")
             resetScore()
+        }else {
+            console.log("Correct")
+            selectedCards.push(event.target.id)
+            incrementScore()
         }   
       }
+    
 
     return(
         <div className="cardContainer">

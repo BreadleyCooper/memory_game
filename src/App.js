@@ -5,7 +5,7 @@ import "./styles/card.css"
 import "./styles/cardContainer.css"
 import selectedCards from './selectedCards';
 
-// Status: 1) randomise the card order on click (will updating the state do this automatically when it rerenders?). 2) implement game logic
+// Status: 1) Only works if you select the same card every time. Need to have it so the cards are reset after each win. (Can i just reset the array back to empty??)
 
 function App() {
 
