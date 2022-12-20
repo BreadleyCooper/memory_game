@@ -3,9 +3,10 @@ import CardContainer from './components/CardContainer';
 import { useState } from 'react';
 import "./styles/card.css"
 import "./styles/cardContainer.css"
+import "./styles/header.css"
 import selectedCards from './selectedCards';
 
-// Status: 1) Only works if you select the same card every time. Need to have it so the cards are reset after each win. (Can i just reset the array back to empty??)
+// Status: 1) A fun little winner thing that pops up if score = 6
 
 function App() {
 
