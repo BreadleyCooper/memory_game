@@ -22,7 +22,12 @@ function App() {
 
   const resetScore = () => {
     setScore(score - score)
+    resetSelectedCards(selectedCards)
   }
+
+  const resetSelectedCards = (array) => {
+    array.length = 0
+  } 
 
 
   return (

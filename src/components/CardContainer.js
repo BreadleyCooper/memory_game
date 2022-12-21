@@ -19,7 +19,6 @@ const CardContainer = (props) => {
     // run the shuffle function before render
     shuffleCardArray(cardArray)
 
-    // on clicking the card, push it's id to the check array
     const handleClick = (event) => {
         // console.log(event.target.id)
         console.log(selectedCards)
