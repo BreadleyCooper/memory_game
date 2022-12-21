@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import CardContainer from './components/CardContainer';
+import Winner from './components/Winner'
 import { useState } from 'react';
 import "./styles/card.css"
 import "./styles/cardContainer.css"
@@ -29,11 +30,24 @@ function App() {
     array.length = 0
   } 
 
+  const resetGame = () => {
+    setScore(score - score)
+    setBestScore(bestScore - bestScore)
+    resetSelectedCards(selectedCards)
+  }
+
+  if (score === 6) {
+    return (
+      <div>
+        <Winner resetSelectedCards={resetSelectedCards} resetGame={resetGame} />
+      </div>
+    )
+  }
 
   return (
     <div className="App">
       <Header score = {score} bestScore = {bestScore}></Header>
-      <CardContainer incrementScore={incrementScore} resetScore={resetScore}></CardContainer>
+      <CardContainer  incrementScore={incrementScore} resetScore={resetScore}></CardContainer>
     </div>
   );
 }
